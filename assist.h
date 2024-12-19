@@ -12,10 +12,10 @@ void Sale(BookData books[], int& bookCount);
 void bookMenu(BookData books[], int& bookCount);
 void table(BookData books[], int bookCount);
 int findBookByISBN(BookData books[], int bookCount, const string& isbn);
-void deleteBook(int& bookCount);
-void lookUpBook();
-void editBook();
-void addBook(int& bookCount);
+void deleteBook(int& bookCount, BookData books[]);
+void lookUpBook(BookData books[]);
+void editBook(BookData books[]);
+void addBook(int& bookCount, BookData books[]);
 
 
 #endif //ASSIST_H

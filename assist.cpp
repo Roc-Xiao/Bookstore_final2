@@ -6,13 +6,13 @@
 #include<string>
 #include<cstdbool>
 #include <utility>
-#include <windows.h> //UTF-8设置
+//#include <windows.h> //UTF-8设置
 #include"BookData.h"
 
 using namespace std;
 
 const int MAX_BOOKS = 100;
-BookData books[MAX_BOOKS]; //创建书库
+// BookData books[MAX_BOOKS]; //创建书库
 const double TAX = 0.06;
 
 int findBookByISBN(BookData books[], int bookCount, const string& isbn) //通过isbn查找
@@ -26,7 +26,7 @@ int findBookByISBN(BookData books[], int bookCount, const string& isbn) //通过
 }
 
 //查找书籍
-void lookUpBook() {
+void lookUpBook(BookData books[]) {
     string isbn;
     cout << "请输入 ISBN 号: ";
     cin >> isbn;
@@ -40,7 +40,7 @@ void lookUpBook() {
 }
 
 //添加书籍
-void addBook(int& bookCount) {
+void addBook(int& bookCount, BookData books[]) {
     if (bookCount >= MAX_BOOKS) {
         cout << "书库已满，无法增加！" << endl;
         return;
@@ -72,7 +72,7 @@ void addBook(int& bookCount) {
 }
 
 // 修改书籍信息
-void editBook() {
+void editBook(BookData books[]) {
     string isbn;
     cout << "请输入要修改的书的 ISBN 号: ";
     cin >> isbn;
@@ -97,7 +97,7 @@ void editBook() {
 }
 
 // 删除书籍
-void deleteBook(int& bookCount) {
+void deleteBook(int& bookCount, BookData books[]) {
     string isbn;
     cout << "请输入要删除的书的 ISBN 号: ";
     cin >> isbn;

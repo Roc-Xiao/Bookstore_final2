@@ -6,7 +6,7 @@
 #include<string>
 #include<cstdbool>
 #include<utility>
-#include<windows.h> //UTF-8设置
+//#include<windows.h> //UTF-8设置
 #include"BookData.h"
 
 using namespace std;
@@ -29,19 +29,19 @@ void BookData::setRetail(double r)    //输入零售价
     retail = r;
 }
 
-[[nodiscard]] string BookData::getISBN() const  //输出isbn
+string BookData::getISBN() const  //输出isbn
 {
     return isbn;
 }
-[[nodiscard]] string BookData::getTitle() const //输出书名
+string BookData::getTitle() const //输出书名
 {
     return bookTitle;
 }
-[[nodiscard]] int BookData::getQty() const  //输出库存
+int BookData::getQty() const  //输出库存
 {
     return qtyOnHand;
 }
-[[nodiscard]] double BookData::getRetail() const    //输出零售价
+double BookData::getRetail() const    //输出零售价
 {
     return retail;
 }

@@ -6,7 +6,7 @@
 #include<string>
 #include<cstdbool>
 #include <utility>
-#include <windows.h> //UTF-8设置
+//#include <windows.h> //UTF-8设置
 #include"BookData.h"
 #include"assist.h"
 
@@ -30,10 +30,10 @@ void bookMenu(BookData books[], int& bookCount)
         cin >> choice;
 
         switch (choice) {
-            case 1: lookUpBook(); break;
-            case 2: addBook(bookCount); break;
-            case 3: editBook(); break;
-            case 4: deleteBook(bookCount); break;
+            case 1: lookUpBook(books); break;
+            case 2: addBook(bookCount, books); break;
+            case 3: editBook(books); break;
+            case 4: deleteBook(bookCount, books); break;
             case 5: break;
             default: cout << "输入错误，请重新输入！" << endl;
         }
@@ -43,9 +43,11 @@ void bookMenu(BookData books[], int& bookCount)
 //报表模块
 void table(BookData books[], int bookCount)
 {
-    cout << "书库报表";
-    cout << setw(15) << "ISBN" << setw(20) << "书名" << setw(10) << "库存量"
-         << setw(10) << "零售价";
+    cout << "书库报表" << endl;
+    cout << setw(15) << "ISBN";
+    cout << setw(20) << "书名";
+    cout << setw(10) << "库存量";
+    cout << setw(10) << "零售价" << endl;
     for (int i = 0; i < bookCount; ++i)
     {
         cout << setw(15) << books[i].getISBN() << setw(20) << books[i].getTitle()
