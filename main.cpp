@@ -5,7 +5,7 @@
 #include<iostream>
 #include<iomanip>
 #include<string>
-// #include <windows.h> //UTF-8设置
+#include <windows.h> //UTF-8设置
 #include"BookData.h"
 #include"assist.h"
 #include"Sale.h"
@@ -19,9 +19,9 @@ const double TAX = 0.06;
 
 int main()
 {
-    // // 设置控制台输出和输入编码为 UTF-8
-    // SetConsoleOutputCP(CP_UTF8);
-    // SetConsoleCP(CP_UTF8);
+    // 设置控制台输出和输入编码为 UTF-8
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
 
     BookData books[MAX_BOOKS];
     int bookCount = 0;  //初始化库存
